@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaka & Ega - Undangan Pernikahan</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #0b0b0b;
+    color: #f5e6b3;
+    overflow-x: hidden;
+}
+
+body.locked {
+    overflow: hidden;
+}
+
+.cover {
+    min-height: 100vh;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.60),
+            rgba(0,0,0,0.80)
+        ),
+        url("images/1.JPG") center/cover no-repeat;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.cover.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.cover-content {
+    padding: 30px;
+    animation: fadeIn 2s ease;
+}
+
+.small-title {
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: #d4af37;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.cover h1 {
+    font-size: 58px;
+    font-weight: normal;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.and {
+    font-size: 25px;
+    color: white;
+    font-style: italic;
+}
+
+.cover-date {
+    margin-top: 20px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.open-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 13px 30px;
+    border: 1px solid #d4af37;
+    border-radius: 30px;
+    color: #d4af37;
+    text-decoration: none;
+    transition: 0.3s;
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.open-button:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.gold-line {
+    width: 70px;
+    height: 2px;
+    background: #d4af37;
+    margin: 0 auto 30px;
+}
+
+.description {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.opening {
+    background: #111;
+}
+
+.opening .quote {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #eee;
+    max-width: 750px;
+    margin: 20px auto;
+    font-style: italic;
+}
+
+.couple {
+    background: #080808;
+}
+
+.couple-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.person {
+    width: 280px;
+}
+
+.person img {
+    width: 230px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 120px 120px 20px 20px;
+    border: 2px solid #d4af37;
+    padding: 5px;
+}
+
+.person h3 {
+    margin-top: 20px;
+    font-size: 27px;
+    color: #d4af37;
+}
+
+.person p {
+    color: #ccc;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.ampersand {
+    font-size: 45px;
+    color: #d4af37;
+    font-style: italic;
+}
+
+.event {
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.88),
+            rgba(0,0,0,0.88)
+        ),
+        url("images/2.JPG") center/cover no-repeat;
+}
+
+.event-card {
+    max-width: 650px;
+    margin: auto;
+    border: 1px solid #d4af37;
+    padding: 40px 25px;
+    border-radius: 15px;
+    background: rgba(10,10,10,0.8);
+}
+
+.event-card h3 {
+    color: #d4af37;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.event-card p {
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.event-date {
+    font-size: 27px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.gallery {
+    background: #111;
+}
+
+.gallery-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #8d7220;
+    transition: 0.4s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.03);
+    border-color: #d4af37;
+}
+
+.rsvp {
+    background: #080808;
+}
+
+.rsvp-box {
+    max-width: 600px;
+    margin: auto;
+}
+
+.rsvp-box input,
+.rsvp-box textarea,
+.rsvp-box select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    background: #151515;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 7px;
+    font-family: inherit;
+}
+
+.rsvp-box textarea {
+    height: 120px;
+    resize: none;
+}
+
+.rsvp-button {
+    padding: 13px 30px;
+    background: #d4af37;
+    border: none;
+    border-radius: 25px;
+    color: #111;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.rsvp-button:hover {
+    background: #f1d46a;
+}
+
+.invitation {
+    background: #111;
+}
+
+.invitation-text {
+    max-width: 650px;
+    margin: 35px auto 0;
+    padding: 30px 20px;
+    border-top: 1px solid #8d7220;
+    border-bottom: 1px solid #8d7220;
+    color: #ddd;
+    line-height: 1.8;
+}
+
+.invitation-text strong {
+    color: #d4af37;
+    font-size: 20px;
+}
+
+.invitation-text p {
+    margin-bottom: 8px;
+}
+
+footer {
+    padding: 50px 20px;
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid #333;
+}
+
+footer h2 {
+    color: #d4af37;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.music-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #d4af37;
+    background: #111;
+    color: #d4af37;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .cover h1 {
+        font-size: 43px;
+    }
+
+    .small-title {
+        font-size: 13px;
+    }
+
+    .couple-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .ampersand {
+        font-size: 35px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container img {
+        height: 250px;
+    }
+
+    section {
+        padding: 65px 18px;
+    }
+}
+</style>
+</head>
+
+<body class="locked">
+
+<!-- COVER -->
+
+<section class="cover" id="home">
+
+    <div class="cover-content">
+
+        <div class="small-title">
+            The Wedding Of
+        </div>
+
+        <h1>Jaka</h1>
+
+        <div class="and">
+            &
+        </div>
+
+        <h1>Ega</h1>
+
+        <div class="cover-date">
+            11 Oktober 2026
+        </div>
+
+        <button
+            class="open-button"
+            onclick="bukaUndangan()"
+        >
+            Buka Undangan
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PEMBUKAAN -->
+
+<section class="opening" id="opening">
+
+    <div class="small-title">
+        Assalamu'alaikum Warahmatullahi Wabarakatuh
+    </div>
+
+    <h2 class="section-title">
+        Dengan Memohon Rahmat Allah SWT
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p class="quote">
+        Dengan memohon rahmat dan ridho Allah SWT,
+        dengan penuh rasa syukur dan kebahagiaan,
+        kami bermaksud mengundang Bapak/Ibu/Saudara/i
+        untuk hadir dan memberikan doa restu
+        pada acara pernikahan kami.
+    </p>
+
+    <p class="description">
+        Merupakan suatu kehormatan dan kebahagiaan
+        yang tidak ternilai bagi kami apabila
+        Bapak/Ibu/Saudara/i berkenan hadir untuk
+        menyaksikan serta turut mendoakan perjalanan
+        baru yang akan kami jalani sebagai sepasang
+        suami dan istri.
+    </p>
+
+    <p class="description" style="margin-top: 20px;">
+        Kehadiran, doa, dan restu dari
+        Bapak/Ibu/Saudara/i akan menjadi kebahagiaan
+        serta kenangan yang sangat berarti bagi kami
+        dan keluarga.
+    </p>
+
+    <p class="description" style="margin-top: 20px;">
+        Atas kehadiran dan doa restu yang diberikan,
+        kami mengucapkan terima kasih yang
+        sebesar-besarnya.
+    </p>
+
+    <p class="description" style="margin-top: 25px;">
+        Wassalamu'alaikum Warahmatullahi Wabarakatuh
+    </p>
+
+</section>
+
+
+<!-- MEMPELAI -->
+
+<section class="couple" id="couple">
+
+    <div class="small-title">
+        Mempelai
+    </div>
+
+    <h2 class="section-title">
+        Jaka & Ega
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <div class="couple-container">
+
+        <div class="person">
+
+            <img
+                src="images/mempelai_pria.JPG"
+                alt="Mempelai Pria"
+            >
+
+            <h3>
+                Jaka Lesmana
+            </h3>
+
+            <p>
+                Putra dari<br>
+                Bapak Yoyo<br>
+                & Ibu Aan
+            </p>
+
+        </div>
+
+        <div class="ampersand">
+            &
+        </div>
+
+        <div class="person">
+
+            <img
+                src="images/mempelai_wanita.jpg"
+                alt="Mempelai Wanita"
+            >
+
+            <h3>
+                Ega Nurdiana
+            </h3>
+
+            <p>
+                Putri dari<br>
+                Bapak Suhaya <br>
+                & Ibu Atik
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACARA -->
+
+<section class="event" id="event">
+
+    <div class="small-title">
+        Save The Date
+    </div>
+
+    <h2 class="section-title">
+        Waktu & Tempat
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <div class="event-card">
+
+        <h3>
+            Akad Nikah
+        </h3>
+
+        <div class="event-date">
+            Minggu, 11 Oktober 2026
+        </div>
+
+        <p>
+            Pukul 08.00
+        </p>
+
+        <p>
+            Alamat : <br>
+            Kp jati rt 05 rw 10 desa cikembulan kec kadungora
+        </p>
+
+        <a
+            href="https://maps.app.goo.gl/pr8t5owJ2zmBds2f8"
+            target="_blank"
+            class="open-button"
+        >
+            Lihat Lokasi
+        </a>
+
+    </div>
+
+    <br><br>
+
+    <div class="event-card">
+
+        <h3>
+            Resepsi
+        </h3>
+
+        <div class="event-date">
+            Minggu, 11 Oktober 2026
+        </div>
+
+        <p>
+            Pukul 10.00 - Selesai
+        </p>
+
+        <p>
+            Alamat :<br>
+            Kp jati rt 05 rw 10 desa cikembulan kec kadungora
+        </p>
+
+        <a
+            href="https://maps.app.goo.gl/pr8t5owJ2zmBds2f8"
+            target="_blank"
+            class="open-button"
+        >
+            Lihat Lokasi
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- GALERI -->
+
+<section class="gallery" id="gallery">
+
+    <div class="small-title">
+        Our Memories
+    </div>
+
+    <h2 class="section-title">
+        Galeri Foto
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p
+        class="description"
+        style="margin-bottom: 30px;"
+    >
+        Beberapa momen yang menjadi bagian
+        dari perjalanan Jaka & Ega menuju
+        hari bahagia.
+    </p>
+
+    <div class="gallery-container">
+
+        <img src="images/1.JPG" alt="Foto Jaka dan Ega 1">
+        <img src="images/2.JPG" alt="Foto Jaka dan Ega 2">
+        <img src="images/3.jpeg" alt="Foto Jaka dan Ega 3">
+        <img src="images/4.jpeg" alt="Foto Jaka dan Ega 4">
+        <img src="images/5.jpeg" alt="Foto Jaka dan Ega 5">
+        <img src="images/6.JPG" alt="Foto Jaka dan Ega 6">
+
+    </div>
+
+</section>
+
+
+<!-- RSVP -->
+
+<section class="rsvp" id="rsvp">
+
+    <div class="small-title">
+        Konfirmasi Kehadiran
+    </div>
+
+    <h2 class="section-title">
+        RSVP
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p class="description">
+        Mohon konfirmasi kehadiran Anda
+        pada acara pernikahan kami.
+        Kehadiran dan doa restu Anda
+        merupakan kebahagiaan bagi kami.
+    </p>
+
+    <br>
+
+    <div class="rsvp-box">
+
+        <input
+            type="text"
+            id="nama"
+            placeholder="Nama Anda"
+        >
+
+        <select id="kehadiran">
+
+            <option value="">
+                Konfirmasi Kehadiran
+            </option>
+
+            <option value="Hadir">
+                Hadir
+            </option>
+
+            <option value="Tidak Hadir">
+                Tidak Hadir
+            </option>
+
+        </select>
+
+        <textarea
+            id="pesan"
+            placeholder="Ucapan dan doa untuk Jaka & Ega"
+        ></textarea>
+
+        <button
+            class="rsvp-button"
+            onclick="kirimRSVP()"
+        >
+            Kirim Konfirmasi
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- TURUT MENGUNDANG -->
+
+<section class="invitation">
+
+    <div class="small-title">
+        Turut Mengundang
+    </div>
+
+    <h2 class="section-title">
+        Keluarga Besar
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p class="description">
+        Dengan penuh rasa syukur dan kebahagiaan,
+        kami segenap keluarga besar turut mengundang
+        Bapak/Ibu/Saudara/i untuk hadir dalam acara
+        pernikahan Jaka & Ega.
+    </p>
+
+    <div class="invitation-text">
+
+        <p>
+            <strong>
+                Keluarga Mempelai Pria
+            </strong>
+        </p>
+
+        <p>
+            Bapak Yoyo
+            & Ibu Aan
+        </p>
+
+        <p>
+            Beserta seluruh keluarga besar
+        </p>
+
+        <br>
+
+        <p>
+            <strong>
+                Keluarga Mempelai Wanita
+            </strong>
+        </p>
+
+        <p>
+            Bapak Suhaya 
+            & Ibu Atik
+        </p>
+
+        <p>
+            Beserta seluruh keluarga besar
+        </p>
+
+    </div>
+
+    <p
+        class="description"
+        style="margin-top: 30px;"
+    >
+        Tanpa mengurangi rasa hormat,
+        kami juga mengundang Bapak/Ibu/Saudara/i
+        untuk hadir serta memberikan doa dan restu
+        bagi kedua mempelai.
+    </p>
+
+    <p
+        class="description"
+        style="margin-top: 20px;"
+    >
+        Merupakan kebahagiaan tersendiri bagi kami
+        apabila Bapak/Ibu/Saudara/i dapat meluangkan
+        waktu untuk hadir dan menjadi bagian dari
+        momen istimewa dalam kehidupan Jaka & Ega.
+    </p>
+
+    <p
+        class="description"
+        style="margin-top: 20px;"
+    >
+        Atas perhatian, kehadiran, doa,
+        dan restu yang diberikan,
+        kami sekeluarga mengucapkan terima kasih.
+    </p>
+
+    <p
+        style="
+            margin-top: 35px;
+            color: #d4af37;
+            font-size: 20px;
+            font-style: italic;
+        "
+    >
+        Jazakumullahu Khairan Katsiran
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>
+        Jaka & Ega
+    </h2>
+
+    <p>
+        Terima kasih atas doa dan restu yang diberikan.
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Jaka & Ega
+    </p>
+
+</footer>
+
+
+<!-- MUSIK -->
+
+<audio id="music" autoplay loop>
+    <source
+        src="music/lagu.mp3"
+        type="audio/mp3"
+    >
+</audio>
+
+
+<button
+    class="music-button"
+    onclick="toggleMusic()"
+    id="musicButton"
+>
+    🎵
+</button>
+
+
+<script>
+
+const music =
+    document.getElementById("music");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+let isPlaying = false;
+
+
+/* =========================
+   MUSIK OTOMATIS SAAT WEBSITE DIBUKA
+========================= */
+
+window.addEventListener("load", function() {
+
+    music.play()
+        .then(function() {
+
+            isPlaying = true;
+
+            musicButton.innerHTML = "⏸";
+
+        })
+        .catch(function() {
+
+            console.log(
+                "Autoplay diblokir oleh browser."
+            );
+
+        });
+
+});
+
+
+/* =========================
+   BUKA UNDANGAN
+========================= */
+
+function bukaUndangan() {
+
+    const cover =
+        document.querySelector(".cover");
+
+    cover.classList.add("hide");
+
+    document.body.classList.remove("locked");
+
+
+    /*
+       Kalau autoplay sebelumnya diblokir,
+       musik akan mulai ketika tombol
+       Buka Undangan ditekan.
+    */
+
+    music.play()
+        .then(function() {
+
+            isPlaying = true;
+
+            musicButton.innerHTML = "⏸";
+
+        })
+        .catch(function() {
+
+            console.log(
+                "Musik tidak dapat diputar."
+            );
+
+        });
+
+
+    setTimeout(function() {
+
+        document
+            .getElementById("opening")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }, 300);
+
+}
+
+
+/* =========================
+   TOMBOL MUSIK
+========================= */
+
+function toggleMusic() {
+
+    if (isPlaying) {
+
+        music.pause();
+
+        musicButton.innerHTML = "🎵";
+
+        isPlaying = false;
+
+    } else {
+
+        music.play();
+
+        musicButton.innerHTML = "⏸";
+
+        isPlaying = true;
+
+    }
+
+}
+
+
+/* =========================
+   RSVP WHATSAPP
+========================= */
+
+function kirimRSVP() {
+
+    const nama =
+        document.getElementById("nama").value;
+
+    const kehadiran =
+        document.getElementById("kehadiran").value;
+
+    const pesan =
+        document.getElementById("pesan").value;
+
+
+    if (
+        nama === "" ||
+        kehadiran === ""
+    ) {
+
+        alert(
+            "Mohon isi nama dan konfirmasi kehadiran."
+        );
+
+        return;
+
+    }
+
+
+    const nomorWhatsApp =
+        "628XXXXXXXXXX";
+
+
+    const text =
+        "Halo Jaka & Ega,%0A%0A" +
+        "Nama: " +
+        nama +
+        "%0A" +
+        "Kehadiran: " +
+        kehadiran +
+        "%0A" +
+        "Ucapan: " +
+        pesan;
+
+
+    window.open(
+        "https://wa.me/" +
+        nomorWhatsApp +
+        "?text=" +
+        text,
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
