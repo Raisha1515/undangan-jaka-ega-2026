@@ -292,6 +292,66 @@ section {
     background: #f1d46a;
 }
 
+/* AMPLOP DIGITAL */
+.gift {
+    background: #080808;
+}
+
+.gift-card {
+    max-width: 500px;
+    margin: 30px auto 0;
+    padding: 30px 25px;
+    border: 1px solid #d4af37;
+    border-radius: 15px;
+    background: #111;
+}
+
+.gift-card h3 {
+    color: #d4af37;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.bank-name {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.account-number {
+    color: #d4af37;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 15px 0 8px;
+}
+
+.account-name {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.copy-button {
+    padding: 12px 25px;
+    background: #d4af37;
+    border: none;
+    border-radius: 25px;
+    color: #111;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.copy-button:hover {
+    background: #f1d46a;
+}
+
+.copy-success {
+    color: #d4af37;
+    margin-top: 15px;
+    display: none;
+}
+
 .invitation {
     background: #111;
 }
@@ -820,6 +880,60 @@ footer p {
 
 </section>
 
+<!-- AMPLOP DIGITAL -->
+
+<section class="gift" id="gift">
+
+    <div class="small-title">
+        Wedding Gift
+    </div>
+
+    <h2 class="section-title">
+        Amplop Digital
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p class="description">
+        Bagi Bapak/Ibu/Saudara/i yang ingin memberikan
+        tanda kasih, dapat melalui rekening berikut.
+    </p>
+
+    <div class="gift-card">
+
+        <h3>
+            BCA
+        </h3>
+
+        <div class="bank-name">
+            No. Rekening
+        </div>
+
+        <div class="account-number" id="nomorRekening">
+            1234567890
+        </div>
+
+        <div class="account-name">
+            a.n. Jaka Lesmana
+        </div>
+
+        <button
+            class="copy-button"
+            onclick="salinRekening()"
+        >
+            Salin No. Rekening
+        </button>
+
+        <div
+            class="copy-success"
+            id="copySuccess"
+        >
+            ✓ Nomor rekening berhasil disalin!
+        </div>
+
+    </div>
+
+</section>
 
 <!-- FOOTER -->
 
@@ -846,8 +960,8 @@ footer p {
 
 <audio id="music" autoplay loop>
     <source
-        src="music/lagu.mp3"
-        type="audio/mp3"
+        src="music/lagu.m4a"
+        type="audio/mp4"
     >
 </audio>
 
@@ -1027,6 +1141,40 @@ function kirimRSVP() {
         text,
         "_blank"
     );
+
+}
+
+/* =========================
+   SALIN NOMOR REKENING
+========================= */
+
+function salinRekening() {
+
+    const nomorRekening =
+        document.getElementById("nomorRekening").innerText;
+
+    navigator.clipboard.writeText(nomorRekening)
+        .then(function() {
+
+            const copySuccess =
+                document.getElementById("copySuccess");
+
+            copySuccess.style.display = "block";
+
+            setTimeout(function() {
+
+                copySuccess.style.display = "none";
+
+            }, 2500);
+
+        })
+        .catch(function() {
+
+            alert(
+                "Nomor rekening gagal disalin. Silakan salin secara manual."
+            );
+
+        });
 
 }
 
