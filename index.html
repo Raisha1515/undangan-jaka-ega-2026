@@ -348,8 +348,9 @@ section {
 
 .copy-success {
     color: #d4af37;
-    margin-top: 15px;
+    margin-top: 12px;
     display: none;
+    font-size: 12px;
 }
 
 .invitation {
@@ -450,6 +451,26 @@ footer p {
         padding: 65px 18px;
     }
 }
+
+/* =========================
+   ANIMASI FOTO SAAT SCROLL
+========================= */
+
+.scroll-photo {
+    transform: scale(0.75);
+    opacity: 0.65;
+    transition:
+        transform 0.15s linear,
+        opacity 0.15s linear;
+    will-change: transform, opacity;
+}
+
+/* Foto yang sedang berada di tengah layar */
+.scroll-photo.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
 </style>
 </head>
 
@@ -1177,6 +1198,79 @@ function salinRekening() {
         });
 
 }
+
+/* =========================
+   ANIMASI FOTO SAAT SCROLL
+========================= */
+
+const scrollPhotos =
+    document.querySelectorAll(
+        ".couple-photo, .gallery img"
+    );
+
+function animatePhotos() {
+
+    const windowHeight =
+        window.innerHeight;
+
+    scrollPhotos.forEach(function(photo) {
+
+        const rect =
+            photo.getBoundingClientRect();
+
+        const photoCenter =
+            rect.top + (rect.height / 2);
+
+        const screenCenter =
+            windowHeight / 2;
+
+        const distance =
+            Math.abs(
+                screenCenter - photoCenter
+            );
+
+        const maxDistance =
+            windowHeight / 1.2;
+
+        let progress =
+            1 - (distance / maxDistance);
+
+        progress =
+            Math.max(
+                0,
+                Math.min(1, progress)
+            );
+
+        /*
+        0.72 = ukuran terkecil
+        1.00 = ukuran terbesar
+        */
+
+        const scale =
+            0.72 + (progress * 0.28);
+
+        const opacity =
+            0.55 + (progress * 0.45);
+
+        photo.style.transform =
+            `scale(${scale})`;
+
+        photo.style.opacity =
+            opacity;
+    });
+}
+
+window.addEventListener(
+    "scroll",
+    animatePhotos,
+    { passive: true }
+);
+
+window.addEventListener(
+    "load",
+    animatePhotos
+);
+
 </script>
 
 </body>
