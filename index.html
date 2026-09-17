@@ -1,18 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="id">
 
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- FONT WEDDING -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+>
 
 <title>Jaka & Ega - Undangan Pernikahan</title>
+
 
 <style>
 
@@ -164,6 +172,7 @@ body.locked {
     font-family: "Montserrat", sans-serif;
     font-size: 11px;
     letter-spacing: 1px;
+
     cursor: pointer;
 
     transition:
@@ -233,6 +242,7 @@ section.visible .gold-line {
     font-size: 13px;
     line-height: 2;
     letter-spacing: .3px;
+
     color: var(--text);
 }
 
@@ -240,11 +250,6 @@ section.visible .gold-line {
 /* =====================================================
    ANIMASI TEKS
 ===================================================== */
-
-/*
-   SEMUA TEKS AWALNYA TERSEMBUNYI.
-   Baru bergerak ketika section masuk layar.
-*/
 
 .animate-text {
     opacity: 0;
@@ -288,8 +293,6 @@ section.visible .animate-text {
 
 /* =====================================================
    ASSALAMUALAIKUM
-   BENAR-BENAR TERSEMBUNYI DI AWAL
-   DAN BARU MUNCUL SAAT DIPICU JAVASCRIPT
 ===================================================== */
 
 .opening .small-title {
@@ -311,9 +314,6 @@ section.visible .animate-text {
         filter 1.3s ease,
         visibility 0s linear 1.4s;
 }
-
-
-/* BARU MUNCUL SETELAH DIPICU JAVASCRIPT */
 
 .opening .small-title.assalam-show {
     opacity: 1 !important;
@@ -388,6 +388,7 @@ section.visible .animate-text {
     font-family: "Cormorant Garamond", serif;
     font-size: 23px;
     line-height: 1.8;
+
     color: var(--white-soft);
 
     max-width: 750px;
@@ -510,11 +511,13 @@ section.visible .animate-text {
 
     font-size: 31px;
     font-weight: 500;
+
     color: var(--cream);
 }
 
 .person p {
     color: #aaa;
+
     margin-top: 10px;
 
     font-size: 12px;
@@ -533,6 +536,7 @@ section.visible .animate-text {
 
     font-size: 55px;
     color: var(--gold);
+
     font-style: italic;
 
     opacity: 0;
@@ -667,6 +671,7 @@ section.visible .animate-text {
     color: #ccc;
 
     line-height: 1.9;
+
     margin-bottom: 25px;
 
     font-size: 12px;
@@ -678,6 +683,7 @@ section.visible .animate-text {
         serif;
 
     font-size: 29px;
+
     color: var(--cream);
 
     margin-bottom: 12px;
@@ -711,6 +717,7 @@ section.visible .animate-text {
     object-fit: cover;
 
     border-radius: 12px;
+
     border: 1px solid #665526;
 
     opacity: 0;
@@ -861,6 +868,7 @@ section.visible .animate-text {
     width: 100%;
 
     padding: 15px;
+
     margin-bottom: 15px;
 
     background: #151515;
@@ -872,6 +880,7 @@ section.visible .animate-text {
     border-radius: 8px;
 
     font-family: "Montserrat", sans-serif;
+
     font-size: 12px;
 
     transition:
@@ -901,6 +910,7 @@ section.visible .animate-text {
     background: var(--gold);
 
     border: none;
+
     border-radius: 25px;
 
     color: #111;
@@ -908,7 +918,9 @@ section.visible .animate-text {
     cursor: pointer;
 
     font-family: "Montserrat", sans-serif;
+
     font-size: 11px;
+
     font-weight: 500;
 
     transition:
@@ -995,6 +1007,7 @@ section.visible .animate-text {
     padding: 35px 20px;
 
     border-top: 1px solid #665526;
+
     border-bottom: 1px solid #665526;
 
     color: #ccc;
@@ -1012,6 +1025,7 @@ section.visible .animate-text {
         serif;
 
     font-size: 24px;
+
     font-weight: 500;
 }
 
@@ -1106,6 +1120,7 @@ section.visible .animate-text {
         serif;
 
     font-size: 32px;
+
     font-weight: 500;
 
     margin-bottom: 15px;
@@ -1113,7 +1128,9 @@ section.visible .animate-text {
 
 .bank-name {
     color: white;
+
     font-size: 12px;
+
     margin-bottom: 8px;
 }
 
@@ -1125,6 +1142,7 @@ section.visible .animate-text {
         serif;
 
     font-size: 31px;
+
     font-weight: 600;
 
     letter-spacing: 3px;
@@ -1146,6 +1164,7 @@ section.visible .animate-text {
     background: var(--gold);
 
     border: none;
+
     border-radius: 25px;
 
     color: #111;
@@ -1196,6 +1215,7 @@ footer h2 {
         serif;
 
     font-size: 34px;
+
     font-weight: 400;
 
     margin-bottom: 10px;
@@ -1271,7 +1291,6 @@ footer p {
             translateY(0)
             scale(1);
     }
-
 }
 
 @keyframes coverName {
@@ -1295,7 +1314,6 @@ footer p {
 
         letter-spacing: normal;
     }
-
 }
 
 @keyframes coverAnd {
@@ -1315,7 +1333,6 @@ footer p {
             scale(1)
             rotate(0);
     }
-
 }
 
 @keyframes fadeUp {
@@ -1333,7 +1350,6 @@ footer p {
         transform:
             translateY(0);
     }
-
 }
 
 
@@ -1410,7 +1426,6 @@ footer p {
     .account-number {
         font-size: 25px;
     }
-
 }
 
 
@@ -1427,15 +1442,17 @@ footer p {
         scroll-behavior: auto !important;
 
         animation-duration: .01ms !important;
+
         animation-iteration-count: 1 !important;
 
         transition-duration: .01ms !important;
     }
-
 }
 
 
-/* FONT & WARNA NAMA MEMPELAI */
+/* =====================================================
+   FONT & WARNA NAMA MEMPELAI
+===================================================== */
 
 .couple .person h3,
 .couple .person .name {
@@ -1449,14 +1466,18 @@ footer p {
 }
 
 
-/* WARNA NAMA COVER */
+/* =====================================================
+   WARNA NAMA COVER
+===================================================== */
 
 .cover h1 {
     color: #d4af37 !important;
 }
 
 
-/* WARNA & DI COVER */
+/* =====================================================
+   WARNA & DI COVER
+===================================================== */
 
 .cover .and {
     color: #d4af37 !important;
@@ -1525,31 +1546,20 @@ footer p {
     <p class="quote">
 
         Dengan memohon rahmat dan ridho Allah SWT,
-
         dengan penuh rasa syukur dan kebahagiaan,
-
         kami bermaksud mengundang Bapak/Ibu/Saudara/i
-
         untuk hadir dan memberikan doa restu
-
         pada acara pernikahan kami.
 
     </p>
 
-    <p
-        class="description animate-text"
-    >
+    <p class="description animate-text">
 
         Merupakan suatu kehormatan dan kebahagiaan
-
         yang tidak ternilai bagi kami apabila
-
         Bapak/Ibu/Saudara/i berkenan hadir untuk
-
         menyaksikan serta turut mendoakan perjalanan
-
         baru yang akan kami jalani sebagai sepasang
-
         suami dan istri.
 
     </p>
@@ -1560,11 +1570,8 @@ footer p {
     >
 
         Kehadiran, doa, dan restu dari
-
         Bapak/Ibu/Saudara/i akan menjadi kebahagiaan
-
         serta kenangan yang sangat berarti bagi kami
-
         dan keluarga.
 
     </p>
@@ -1575,9 +1582,7 @@ footer p {
     >
 
         Atas kehadiran dan doa restu yang diberikan,
-
         kami mengucapkan terima kasih yang
-
         sebesar-besarnya.
 
     </p>
@@ -1624,9 +1629,13 @@ footer p {
             </h3>
 
             <p>
+
                 Putra dari<br>
+
                 Bapak Yoyo<br>
+
                 & Ibu Aan
+
             </p>
 
         </div>
@@ -1649,9 +1658,13 @@ footer p {
             </h3>
 
             <p>
+
                 Putri dari<br>
-                Bapak Suhaya <br>
+
+                Bapak Suhaya<br>
+
                 & Ibu Atik
+
             </p>
 
         </div>
@@ -1693,8 +1706,11 @@ footer p {
         </p>
 
         <p>
+
             Alamat : <br>
+
             Kp jati rt 05 rw 10 desa cikembulan kec kadungora
+
         </p>
 
         <a
@@ -1726,8 +1742,11 @@ footer p {
         </p>
 
         <p>
+
             Alamat :<br>
+
             Kp jati rt 05 rw 10 desa cikembulan kec kadungora
+
         </p>
 
         <a
@@ -1765,9 +1784,7 @@ footer p {
     >
 
         Beberapa momen yang menjadi bagian
-
         dari perjalanan Jaka & Ega menuju
-
         hari bahagia.
 
     </p>
@@ -1829,11 +1846,8 @@ footer p {
     <p class="description">
 
         Mohon konfirmasi kehadiran Anda
-
         pada acara pernikahan kami.
-
         Kehadiran dan doa restu Anda
-
         merupakan kebahagiaan bagi kami.
 
     </p>
@@ -1848,6 +1862,7 @@ footer p {
             id="nama"
             placeholder="Nama Anda"
         >
+
 
         <select id="kehadiran">
 
@@ -1903,11 +1918,8 @@ footer p {
     <p class="description">
 
         Dengan penuh rasa syukur dan kebahagiaan,
-
         kami segenap keluarga besar turut mengundang
-
         Bapak/Ibu/Saudara/i untuk hadir dalam acara
-
         pernikahan Jaka & Ega.
 
     </p>
@@ -1924,15 +1936,19 @@ footer p {
         </p>
 
         <p>
+
             Bapak Yoyo
             & Ibu Aan
+
         </p>
 
         <p>
             Beserta seluruh keluarga besar
         </p>
 
+
         <br>
+
 
         <p>
 
@@ -1943,8 +1959,10 @@ footer p {
         </p>
 
         <p>
+
             Bapak Suhaya
             & Ibu Atik
+
         </p>
 
         <p>
@@ -1960,11 +1978,8 @@ footer p {
     >
 
         Tanpa mengurangi rasa hormat,
-
         kami juga mengundang Bapak/Ibu/Saudara/i
-
         untuk hadir serta memberikan doa dan restu
-
         bagi kedua mempelai.
 
     </p>
@@ -1976,11 +1991,8 @@ footer p {
     >
 
         Merupakan kebahagiaan tersendiri bagi kami
-
         apabila Bapak/Ibu/Saudara/i dapat meluangkan
-
         waktu untuk hadir dan menjadi bagian dari
-
         momen istimewa dalam kehidupan Jaka & Ega.
 
     </p>
@@ -1992,9 +2004,7 @@ footer p {
     >
 
         Atas perhatian, kehadiran, doa,
-
         dan restu yang diberikan,
-
         kami sekeluarga mengucapkan terima kasih.
 
     </p>
@@ -2009,7 +2019,9 @@ footer p {
             font-style: italic;
         "
     >
+
         Jazakumullahu Khairan Katsiran
+
     </p>
 
 </section>
@@ -2034,7 +2046,6 @@ footer p {
     <p class="description">
 
         Bagi Bapak/Ibu/Saudara/i yang ingin memberikan
-
         tanda kasih, dapat melalui rekening berikut.
 
     </p>
@@ -2043,7 +2054,7 @@ footer p {
     <div class="gift-card">
 
         <h3>
-            BCA
+            BRI
         </h3>
 
         <div class="bank-name">
@@ -2054,11 +2065,11 @@ footer p {
             class="account-number"
             id="nomorRekening"
         >
-            1234567890
+            418401027544532
         </div>
 
         <div class="account-name">
-            a.n. Jaka Lesmana
+            a.n. Ega Nurdiana
         </div>
 
         <button
@@ -2131,6 +2142,7 @@ footer p {
 
 
 <script>
+
 
 /* =====================================================
    MUSIK
@@ -2250,15 +2262,34 @@ function toggleMusic() {
 
 function kirimRSVP() {
 
+
+    /* =================================================
+       AMBIL DATA FORM
+    ================================================= */
+
     const nama =
-        document.getElementById("nama").value;
+        document
+            .getElementById("nama")
+            .value
+            .trim();
+
 
     const kehadiran =
-        document.getElementById("kehadiran").value;
+        document
+            .getElementById("kehadiran")
+            .value;
+
 
     const pesan =
-        document.getElementById("pesan").value;
+        document
+            .getElementById("pesan")
+            .value
+            .trim();
 
+
+    /* =================================================
+       CEK INPUT
+    ================================================= */
 
     if (
         nama === "" ||
@@ -2270,37 +2301,298 @@ function kirimRSVP() {
         );
 
         return;
+    }
+
+
+    /* =================================================
+       NOMOR WHATSAPP
+    ================================================= */
+
+    const nomorWhatsApp =
+        "6281995262388";
+
+
+    /* =================================================
+       UCAPAN TAMU OTOMATIS
+    ================================================= */
+
+    let ucapanTamu = "";
+
+
+    if (pesan !== "") {
+
+
+        /* Ubah menjadi huruf kecil
+           agar mudah membaca kata kunci */
+
+        const pesanLower =
+            pesan.toLowerCase();
+
+
+        /* =================================================
+           LANGGENG / AWET
+        ================================================= */
+
+        if (
+            pesanLower.includes("langgeng") ||
+            pesanLower.includes("awet")
+        ) {
+
+            ucapanTamu =
+                "Selamat ya Jaka & Ega! " +
+
+                "Semoga pernikahannya selalu langgeng, " +
+                "bahagia, harmonis, dan dipenuhi keberkahan. " +
+
+                "Semoga selalu saling menyayangi dan menjadi " +
+                "keluarga yang sakinah, mawaddah, warahmah. " +
+
+                "💐";
+
+
+        }
+
+
+        /* =================================================
+           BAHAGIA
+        ================================================= */
+
+        else if (
+            pesanLower.includes("bahagia") ||
+            pesanLower.includes("kebahagiaan")
+        ) {
+
+            ucapanTamu =
+                "Selamat atas pernikahan Jaka & Ega! " +
+
+                "Semoga selalu diberikan kebahagiaan, " +
+                "keharmonisan, dan keberkahan dalam menjalani " +
+                "kehidupan rumah tangga. " +
+
+                "Semoga kebahagiaan selalu menyertai kalian berdua. " +
+
+                "❤️";
+
+
+        }
+
+
+        /* =================================================
+           SELAMAT / CONGRATS
+        ================================================= */
+
+        else if (
+            pesanLower.includes("selamat") ||
+            pesanLower.includes("congrat")
+        ) {
+
+            ucapanTamu =
+                "Selamat ya Jaka & Ega atas hari bahagianya! " +
+
+                "Semoga pernikahan kalian selalu dipenuhi " +
+                "cinta, kebahagiaan, dan keberkahan. " +
+
+                "Semoga menjadi keluarga yang harmonis " +
+                "dan langgeng selalu. " +
+
+                "💕";
+
+
+        }
+
+
+        /* =================================================
+           LANCAR / HARI-H
+        ================================================= */
+
+        else if (
+            pesanLower.includes("lancar") ||
+            pesanLower.includes("hari-h")
+        ) {
+
+            ucapanTamu =
+                "Selamat ya Jaka & Ega! " +
+
+                "Semoga seluruh rangkaian acara berjalan " +
+                "lancar sampai hari-H dan pernikahan kalian " +
+                "selalu diberikan kebahagiaan serta keberkahan. " +
+
+                "✨";
+
+
+        }
+
+
+        /* =================================================
+           MOMONGAN / ANAK / KETURUNAN
+        ================================================= */
+
+        else if (
+            pesanLower.includes("momongan") ||
+            pesanLower.includes("anak") ||
+            pesanLower.includes("keturunan")
+        ) {
+
+            ucapanTamu =
+                "Selamat ya Jaka & Ega! " +
+
+                "Semoga pernikahan kalian selalu dipenuhi " +
+                "kebahagiaan, cinta, dan keberkahan. " +
+
+                "Semoga segera diberikan keturunan yang " +
+                "sehat, baik, dan menjadi kebahagiaan bagi keluarga. " +
+
+                "👶🏻💕";
+
+
+        }
+
+
+        /* =================================================
+           UCAPAN UMUM
+        ================================================= */
+
+        else {
+
+            ucapanTamu =
+                "Selamat ya Jaka & Ega! " +
+
+                "Semoga pernikahan kalian selalu dipenuhi " +
+                "kebahagiaan, cinta, kedamaian, dan keberkahan. " +
+
+                "Semoga menjadi keluarga yang sakinah, " +
+                "mawaddah, warahmah. " +
+
+                "💐";
+
+        }
 
     }
 
 
-    const nomorWhatsApp =
-        "628XXXXXXXXXX";
+    /* =================================================
+       PESAN OTOMATIS BERDASARKAN KEHADIRAN
+    ================================================= */
+
+    let pesanOtomatis = "";
 
 
-    const text =
-        "Halo Jaka & Ega,%0A%0A" +
+    /* =================================================
+       JIKA HADIR
+    ================================================= */
+
+    if (kehadiran === "Hadir") {
+
+        pesanOtomatis =
+
+            "Selamat ya Jaka & Ega!\n\n" +
+
+            "Senang banget dengar kabar bahagia ini. " +
+
+            "Semoga seluruh prosesi acaranya berjalan lancar " +
+
+            "sampai hari-H, dan pernikahan kalian selalu " +
+
+            "dipenuhi kebahagiaan, kedamaian, serta keberkahan.\n\n" +
+
+            "Lewat pesan ini aku sekaligus mau konfirmasi " +
+
+            "kalau aku bakal hadir untuk merayakan hari spesial " +
+
+            "kalian nanti. Sampai ketemu di sana ya!";
+
+    }
+
+
+    /* =================================================
+       JIKA TIDAK HADIR
+    ================================================= */
+
+    else if (kehadiran === "Tidak Hadir") {
+
+        pesanOtomatis =
+
+            "Selamat ya Jaka & Ega!\n\n" +
+
+            "Senang banget dengar kabar bahagia kalian. " +
+
+            "Semoga seluruh acara lancar sampai hari-H " +
+
+            "dan pernikahan kalian selalu dipenuhi kebahagiaan.\n\n" +
+
+            "Mohon maaf banget aku belum bisa hadir di acara " +
+
+            "pernikahan kalian nanti karena ada halangan. " +
+
+            "Kirim doa terbaik buat kalian berdua, semoga menjadi " +
+
+            "keluarga yang sakinah, mawaddah, warahmah. " +
+
+            "Selamat menempuh hidup baru ya!";
+
+    }
+
+
+    /* =================================================
+       DATA TAMU
+    ================================================= */
+
+    const dataTamu =
 
         "Nama: " +
         nama +
 
-        "%0A" +
+        "\n" +
 
         "Kehadiran: " +
-        kehadiran +
+        kehadiran;
 
-        "%0A" +
 
-        "Ucapan: " +
-        pesan;
+    /* =================================================
+       GABUNGKAN PESAN
+    ================================================= */
+
+    let text =
+
+        pesanOtomatis +
+
+        "\n\n" +
+
+        dataTamu;
+
+
+    /* =================================================
+       MASUKKAN UCAPAN OTOMATIS
+    ================================================= */
+
+    if (ucapanTamu !== "") {
+
+        text +=
+
+            "\n\nUcapan & Doa:\n" +
+
+            ucapanTamu;
+
+    }
+
+
+    /* =================================================
+       BUKA WHATSAPP
+    ================================================= */
+
+    const url =
+
+        "https://wa.me/" +
+
+        nomorWhatsApp +
+
+        "?text=" +
+
+        encodeURIComponent(text);
 
 
     window.open(
-        "https://wa.me/" +
-        nomorWhatsApp +
-        "?text=" +
-        text,
-
+        url,
         "_blank"
     );
 
@@ -2314,6 +2606,7 @@ function kirimRSVP() {
 function salinRekening() {
 
     const nomorRekening =
+
         document
             .getElementById("nomorRekening")
             .innerText;
@@ -2326,6 +2619,7 @@ function salinRekening() {
         .then(function() {
 
             const copySuccess =
+
                 document.getElementById(
                     "copySuccess"
                 );
@@ -2359,45 +2653,60 @@ function salinRekening() {
    OBSERVER SECTION
 ===================================================== */
 
-const sections = document.querySelectorAll(
-    "section:not(.cover)"
-);
+const sections =
+    document.querySelectorAll(
+        "section:not(.cover)"
+    );
+
 
 if ("IntersectionObserver" in window) {
 
-    const sectionObserver = new IntersectionObserver(
-        function(entries) {
 
-            entries.forEach(function(entry) {
+    const sectionObserver =
+        new IntersectionObserver(
 
-                if (entry.isIntersecting) {
+            function(entries) {
 
-                    entry.target.classList.add("visible");
+                entries.forEach(function(entry) {
 
-                }
+                    if (entry.isIntersecting) {
 
-            });
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
-        },
-        {
-            threshold: 0.18,
-            rootMargin: "0px 0px -80px 0px"
-        }
-    );
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.18,
+
+                rootMargin:
+                    "0px 0px -80px 0px"
+            }
+
+        );
+
 
     sections.forEach(function(section) {
+
         sectionObserver.observe(section);
+
     });
+
 
 } else {
 
-    /*
-       Fallback untuk browser yang tidak
-       mendukung IntersectionObserver
-    */
+
+    /* Fallback */
 
     sections.forEach(function(section) {
+
         section.classList.add("visible");
+
     });
 
 }
@@ -2410,25 +2719,39 @@ if ("IntersectionObserver" in window) {
 const openingSection =
     document.querySelector(".opening");
 
+
 const assalam =
+
     openingSection
-        ? openingSection.querySelector(".small-title")
+
+        ? openingSection.querySelector(
+            ".small-title"
+        )
+
         : null;
 
 
 if (openingSection && assalam) {
 
-    assalam.classList.remove("assalam-show");
+
+    assalam.classList.remove(
+        "assalam-show"
+    );
+
 
     if ("IntersectionObserver" in window) {
 
+
         const assalamObserver =
+
             new IntersectionObserver(
+
                 function(entries) {
 
                     entries.forEach(function(entry) {
 
                         if (entry.isIntersecting) {
+
 
                             setTimeout(function() {
 
@@ -2437,6 +2760,7 @@ if (openingSection && assalam) {
                                 );
 
                             }, 250);
+
 
                             assalamObserver.unobserve(
                                 entry.target
@@ -2447,21 +2771,25 @@ if (openingSection && assalam) {
                     });
 
                 },
+
                 {
                     threshold: 0.35
                 }
+
             );
 
-        assalamObserver.observe(openingSection);
+
+        assalamObserver.observe(
+            openingSection
+        );
+
 
     } else {
 
-        /*
-           Fallback supaya Assalamu'alaikum
-           tetap muncul di browser lama
-        */
 
-        assalam.classList.add("assalam-show");
+        assalam.classList.add(
+            "assalam-show"
+        );
 
     }
 
@@ -2473,16 +2801,22 @@ if (openingSection && assalam) {
 ===================================================== */
 
 window.addEventListener(
+
     "scroll",
+
     function() {
 
+
         const cover =
-            document.querySelector(".cover");
+            document.querySelector(
+                ".cover"
+            );
 
 
         if (
             !cover.classList.contains("hide")
         ) {
+
 
             const scrollY =
                 window.scrollY;
@@ -2502,6 +2836,7 @@ window.addEventListener(
 );
 
 </script>
+
 
 </body>
 
